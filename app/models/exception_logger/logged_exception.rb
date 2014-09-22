@@ -40,6 +40,7 @@ module ExceptionLogger
     def request=(request)
       if request.is_a?(String)
         write_attribute :request, request
+=begin
       else
         max = request.env.keys.max { |a,b| a.length <=> b.length }
         env = request.env.keys.sort.inject [] do |env, key|
@@ -53,6 +54,7 @@ module ExceptionLogger
             "* Parameters: #{request.parameters.inspect}",
             "* Rails Root: #{rails_root}"
           ] * "\n")
+=end
       end
     end
 
